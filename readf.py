@@ -3,7 +3,7 @@ count = 0
 with open('reviews.txt', 'r') as f:
     for line in f:
         # 將每筆留言加入清單data
-        data.append(line.strip())
+        data.append(line)
         count += 1
         # 每100000筆印一次長度(得知讀取進度)
         if count % 100000 == 0:
@@ -22,6 +22,13 @@ sum = 0
 for review in data:
     review_len = len(review)
     sum = sum + review_len
-    # 每筆留言的字數加總，除以有幾筆留言
-    avg_line = sum / len(data)
+# 每筆留言的字數加總，除以有幾筆留言
+avg_line = sum / len(data)
 print(f'留言平均長度為：{avg_line}個字')
+
+new = []
+for d in data:
+    if len(d) < 100:
+        new.append(d)
+print(f'有{len(new)}筆留言長度少於一百')
+
