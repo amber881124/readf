@@ -32,3 +32,11 @@ for d in data:
         new.append(d)
 print(f'有{len(new)}筆留言長度少於一百')
 
+good = []
+c = 'good'
+for g in data:
+    if c in g:
+        good.append(g)
+print(f'有{c}的留言有{len(good)}筆')
+
+
